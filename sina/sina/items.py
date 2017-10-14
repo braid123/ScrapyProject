@@ -10,7 +10,8 @@ from scrapy import Item, Field
 
 class CommentItem(Item):
     table_name = 'comments'
-    _id = Field()
+    id = Field()
     post_id = Field()
     comment = Field()
     refer = Field()
+    like_counts = Field()

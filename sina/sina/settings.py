@@ -70,11 +70,23 @@ DEFAULT_REQUEST_HEADERS = {
 #ITEM_PIPELINES = {
 #    'sina.pipelines.SinaPipeline': 300,
 #}
+"""
 ITEM_PIPELINES = {
     'sina.pipelines.MongoPipeline': 301,
 }
-MONGO_URI = 'mongodb://localhost'
-MONGO_DATABASE = 'sina_weibo'
+"""
+ITEM_PIPELINES = {
+    'sina.mysqlpipelines.pipelines.SinaPipeline': 1,
+}
+MYSQL_HOSTS = '127.0.0.1'
+MYSQL_USER = 'root'
+MYSQL_PASSWORD = 'root'
+MYSQL_PORT = '3306'
+MYSQL_DB = 'sina'
+
+# MONGO_URI = 'mongodb://localhost'
+# MONGO_DATABASE = 'sina_weibo'
+
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
 #AUTOTHROTTLE_ENABLED = True
