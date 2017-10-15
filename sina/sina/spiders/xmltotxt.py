@@ -35,8 +35,3 @@ def findallxml(path):
 if __name__ == '__main__':
     path = r'C:\Users\lenovo\PycharmProjects\ScrapyProject\sina\sina\spiders\测试数据'
     findallxml(path)
-"""
-from snownlp import sentiment
-sentiment.train('neg.txt', 'pos.txt')
-sentiment.save('sentiment.marshal')
-"""
