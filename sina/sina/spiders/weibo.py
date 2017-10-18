@@ -36,6 +36,7 @@ class WeiboSpider(scrapy.Spider):
                 reply_text = re.sub('.*?@.*?:', '', re.sub('<.*?>', '', data.get('reply_text', '')))
                 like_counts = data.get('like_counts')
                 item = CommentItem()
+                # 数据保存
                 item['id'] = commentid
                 item['comment'] = text_2
                 item['refer'] = reply_text
