@@ -34,6 +34,7 @@ def SelectDataFromMysql():
                 refer = row[3]
                 like_counts = row[4]
                 if comment:
+                    # 将评论添加到textlist中
                     textlist.append(comment)
                 print("id:%s post_id:%s comment:%s refer:%s like_counts:%s"
                          % (id, post_id, comment, refer, like_counts))
@@ -53,7 +54,7 @@ def NlpTencent(textlist):
             'type': 4
         }
         # 生成请求的URL，不发起请求
-        request_url = service.generateUrl(action, action_params)
+        # request_url = service.generateUrl(action, action_params)
         # 调用接口，发起请求
         s = service.call(action, action_params)
         dejson = json.loads(s)
@@ -79,8 +80,11 @@ def NlpTencent(textlist):
         print('调用失败次数 iFailCount:', iFailCount)
         if iTotalCount > 1000:
             break
+    # 创建名为sentiment的figure对象
     fig1 = plt.figure("sentiment")
+    # 生成Histograms直方图
     plt.hist(sentimentslist, bins=np.arange(0, 1, 0.02))
+    # 展示图像
     plt.show()
 
 
