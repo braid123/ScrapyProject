@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from snownlp import SnowNLP
-from NlpTencentParse import SelectDataFromMysql
+from nlptencentparse import SelectDataFromMysql
 
 
 def snowanalysis(textlist):
